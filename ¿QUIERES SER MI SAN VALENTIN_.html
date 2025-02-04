@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín? 👩🏻‍❤️‍👨🏻</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffdde1;
+        }
+        .container {
+            margin-top: 100px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            position: relative;
+        }
+        h1 {
+            color: #e63946;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        #yes {
+            background-color: #ff477e;
+            color: white;
+        }
+        #no {
+            background-color: #999;
+            color: white;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¿Quieres ser mi San Valentín? 👩🏻‍❤️‍👨🏻</h1>
+        <div class="buttons">
+            <button id="yes" onclick="accept()">Sí 💖</button>
+            <button id="no" onmouseover="moveButton()">No 💔</button>
+        </div>
+    </div>
+
+    <script>
+        function accept() {
+            document.querySelector(".container").innerHTML = "<h1>¡Sabía que dirías que sí! 👩🏻‍❤️‍👨🏻💞</h1>";
+        }
+
+        function moveButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            document.getElementById("no").style.left = `${x}px`;
+            document.getElementById("no").style.top = `${y}px`;
+        }
+    </script>
+    
+</body>
+</html>
